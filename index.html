@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ionic app</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"
+    />
+  </head>
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar color="primary">
+          <ion-buttons slot="start">
+            <ion-button>
+              <ion-icon name="logo-ionic"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          <ion-title>Productos App</ion-title>
+          <ion-buttons slot="end">
+            <ion-button>
+              <p style="margin-right: 2.5em">
+                TOTAL: <span id="total">0</span>$
+              </p>
+              <ion-icon name="cart-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="4" offset-md="4">
+              <ion-card>
+                <ion-card-header color="dark">
+                  <ion-card-title> Producto nuevo</ion-card-title>
+                </ion-card-header>
+                <ion-card-content>
+                  <ion-item class="ion-margin-vertical">
+                    <ion-label position="floating">Nombre producto:</ion-label>
+                    <ion-input id="productName" type="text"></ion-input>
+                  </ion-item>
+                  <ion-item class="ion-margin-vertical">
+                    <ion-label position="floating">Precio producto:</ion-label>
+                    <ion-input id="productPrice" type="number"></ion-input>
+                  </ion-item>
+                  <ion-button id="button-save" fill="outline">
+                    <ion-icon
+                      name="file-tray-full-outline"
+                      slot="start"
+                    ></ion-icon>
+                    Guardar</ion-button
+                  >
+                  <ion-button id="button-cancel" color="danger" fill="outline">
+                    <ion-icon
+                      name="close-circle-outline"
+                      slot="start"
+                    ></ion-icon
+                    >Borrar</ion-button
+                  >
+                </ion-card-content>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size-md="4" offset-md="4">
+              <ion-list id="productList"></ion-list>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+    </ion-app>
+
+    <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
